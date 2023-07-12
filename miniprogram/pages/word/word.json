@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "header-back": "/components/header-back/header-back"
+  },
+  "navigationBarBackgroundColor": "#ff9933",
+  "navigationBarTitleText": ""
+}
+
+
+
+

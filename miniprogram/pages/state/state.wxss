@@ -1,0 +1,80 @@
+/* pages/state/state.wxss */
+/* 头部选项卡 */
+.tab-title{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.tab-title view{
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid #333;
+}
+.tab-title .active{
+  background-color:#333;
+  color: #fff;
+}
+.tab-title .incomplete{
+  border-radius:9999px 0 0 9999px ;
+}
+.state{
+  border: 3px solid red;
+}
+.tab-title .complete{
+  border-radius:0 9999px  9999px  0;
+}
+
+/* 数据列表 */
+.listItem{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 20px 12px;
+  border: 1px #444441 solid;
+  border-radius: 7px;
+}
+
+.listItem .pic{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.listItem .pic view{
+ margin-left: 15px;
+}
+.listItem .pic image{
+ width: 25px;
+ height: 25px;
+}
+.listItem .pic .mood image{
+ width: 50px;
+ height: 50px;
+}
+
+.time .top-box{
+ font-size: 14px;
+ color: #757572;
+}
+.time .day{
+ font-size: 18px;
+ font-weight: bold;
+ margin-right: 5px;
+ color: #000;
+}
+.time .line{
+ background-color: #000;
+ height: 1px;
+ width: 120%;
+ margin: 10px 0;
+}
+.time .week{
+ font-size: 14px;
+ color: #757572;
+}
+.inc,
+.com{
+  overflow: auto;
+  height: calc(100vh - 123px);
+}

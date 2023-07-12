@@ -1,0 +1,29 @@
+/* pages/user/user.wxss */
+
+@import "../../styles/iconfont.wxss";
+
+.header-tab{
+  background-color: #edede4;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  line-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-fanhui2{
+  font-size: 20px;
+  position: absolute;
+  left: 10px;
+}
+.slot{
+  font-size: 20px;
+  font-weight: bolder;
+}
+.null{
+  height:80px ;
+}
+

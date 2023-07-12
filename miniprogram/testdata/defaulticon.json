@@ -1,0 +1,108 @@
+{
+  "defaultIcon": {
+    "hb": {
+      "score": 9,
+      "icon": "https://uniapp.top/tupian/diary/diary_icon/feicbang.png",
+      "name": "非常棒",
+      "desc": "真替主人感到高兴呢\uD83D\uDC4D",
+      "name_en": "Great",
+      "desc_en": "I'm so happy for the host\uD83D\uDC4D"
+    },
+    "bc": {
+      "score": 8,
+      "icon": "https://uniapp.top/tupian/diary/diary_icon/bucuo.png",
+      "name": "还不错",
+      "desc": "感谢\uD83D\uDE4F幸福常伴",
+      "name_en": "not bad",
+      "desc_en": "Thank you \uD83D\uDE4F happy always with you"
+    },
+    "cs": {
+      "score": 8.5,
+      "icon": "https://uniapp.top/tupian/diary/diary_icon/chongs.png",
+      "name": "充实",
+      "desc": "感谢\uD83D\uDE4F幸福常伴",
+      "name_en": "substantial",
+      "desc_en": "Thank you \uD83D\uDE4F happy always with you"
+    },
+    "xd": {
+      "score": 7,
+      "icon": "https://uniapp.top/tupian/diary/diary_icon/xindong.png",
+      "name": "心动",
+      "desc": "心动\uD83D\uDC93不如行动？",
+      "name_en": "Heartbeat",
+      "desc_en": "Heartbeat \uD83D\uDC93 is not as good as action?"
+    },
+    "pj": {
+      "score": 6,
+      "icon": "https://uniapp.top/tupian/diary/diary_icon/pinjing.png",
+      "name": "平静",
+      "desc": "平平淡淡才是真",
+      "name_en": "calm",
+      "desc_en": "simple is the best"
+    },
+    "yb": {
+      "score": 5,
+      "icon": "https://uniapp.top/tupian/diary/diary_icon/yibanb.png",
+      "name": "一般般",
+      "desc": "发个长日记倾诉下？",
+      "name_en": "so so",
+      "desc_en": "Tell me in a long diary? "
+    },
+    "gg": {
+      "score": 5.2,
+      "icon": "https://uniapp.top/tupian/diary/diary_icon/ganga.png",
+      "name": "尴尬",
+      "desc": "发个长日记倾诉下？",
+      "name_en": "awkward",
+      "desc_en": "Tell me in a long diary? "
+    },
+    "wy": {
+      "score": 5.2,
+      "icon": "https://uniapp.top/tupian/diary/diary_icon/wuyu.png",
+      "name": "无语",
+      "desc": "发个长日记倾诉下？",
+      "name_en": "Speechless",
+      "desc_en": "Tell me in a long diary? "
+    },
+    "zj": {
+      "score": 5.2,
+      "icon": "https://uniapp.top/tupian/diary/diary_icon/zhengj.png",
+      "name": "震惊",
+      "desc": "发个长日记倾诉下？",
+      "name_en": "shock",
+      "desc_en": "Tell me in a long diary? "
+    },
+    "dx": {
+      "score": 2,
+      "icon": "https://uniapp.top/tupian/diary/diary_icon/danxin.png",
+      "name": "担心",
+      "desc": "稳住，一切都会好起来",
+      "name_en": "Worry",
+      "desc_en": "Stay steady, everything will be okay"
+    },
+    "li": {
+      "score": 4,
+      "icon": "https://uniapp.top/tupian/diary/diary_icon/lei.png",
+      "name": "累",
+      "desc": "主人，辛苦了！",
+      "name_en": "tired",
+      "desc_en": "Master, you have worked hard!"
+    },
+    "yy": {
+      "score": 3,
+      "icon": "https://uniapp.top/tupian/diary/diary_icon/yayi.png",
+      "name": "小压抑",
+      "desc": "相信好日子将会来临",
+      "name_en": "Small depression",
+      "desc_en": "Believe that a good day will come"
+    },
+    "fn": {
+      "score": 1,
+      "icon": "https://uniapp.top/tupian/diary/diary_icon/fennu.png",
+      "name": "愤怒",
+      "desc": "主人，消消气吧～",
+      "name_en": "anger",
+      "desc_en": "Master, calm down~"
+    }
+  }
+}

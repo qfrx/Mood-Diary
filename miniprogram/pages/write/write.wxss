@@ -1,0 +1,225 @@
+/* pages/write/write.wxss */
+
+.back .iconfont{
+  margin-left: 12px;
+  font-size: 16px;
+}
+.write-area{
+  padding: 12px;
+  margin: 10px;
+  border: 1px #444441 solid;
+  border-radius: 10px;
+}
+
+/* 头部信息 */
+.head-container{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.head-container .pic{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.head-container .pic view{
+  margin-left: 15px;
+}
+.head-container .pic image{
+  width: 25px;
+  height: 25px;
+}
+.head-container .pic .mood image{
+  width: 50px;
+  height: 50px;
+}
+
+.time .top-box{
+  font-size: 14px;
+  color: #757572;
+}
+.time .day{
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 5px;
+  color: #000;
+}
+.time .line{
+  background-color: #000;
+  height: 1px;
+  width: 120%;
+  margin: 10px 0;
+}
+.time .week{
+  font-size: 14px;
+  color: #757572;
+}
+
+/* 文本容器 */
+.word-container .title {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: lighter;
+}
+.word-container .content{
+  margin: 20px 0 0;
+  font-size: 14px;
+  color: #757572;
+  transition: all,.5s;
+}
+#editor{
+  line-height: 1.5em;
+  height: auto;
+}
+
+/* 提交按钮 */
+.sub-btn{
+  background-color: #585856;
+  width: 90%;
+  font-size: 20px;
+  color: #fff;
+  padding: 15px 0;
+  border-radius: 9999px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+/* 工具栏 */
+.toolbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  background-color: #edede4;
+}
+.toolbar view{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.toolbar .iconfont{
+  font-size: 20px;
+}
+.toolbar view text{
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+/* 空展位容器 */
+.null-box{
+  height: 100px;
+}
+/* 遮罩 */
+.bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: .4;
+  z-index: 1;
+}
+/* 天气弹出框 */
+.weatherTab,
+.eventsTab{
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+  z-index: 99;
+  transition: all,.5s;
+}
+.weatherTab .head{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0 0;
+  font-size: 18px;
+}
+.weatherTab .head .close text{
+  position: absolute;
+  left: 0;
+  left: 7vw;
+}
+.weatherTab .weather-list{
+  display: flex;  
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.weatherTab .weather-list .weather-item,
+.eventsTab .events-list .events-item{
+  width: 13vw;
+  margin: 0 1vw;
+  padding: 1vw 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+}
+.weatherTab .weather-list image,
+.eventsTab .events-list image{
+  width: 30px;
+  height: 30px;
+}
+.weatherTab .weather-list text,
+.eventsTab .events-list text{
+  font-size: 12px;
+  margin-top: 5px;
+  color: #6f6f6f;
+  margin-bottom: 1vw;
+}
+.weather-item.active,
+.events-item.active{
+  background-color: #e9e9e9;
+}
+
+
+/* 事件弹窗 */
+.eventsTab{
+  height: 70vh;
+}
+
+.eventsTab .head{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 30px 0 ;
+  font-size: 16px;
+  background-color: #fff;
+}
+.eventsTab .head .sure{
+  color: rgb(214, 155, 78);
+}
+.eventsTab .events-list{
+  display: flex;  
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  height: 60vh;
+  overflow: auto;
+}
+.eventsTab .events-list .events-item{
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+.eventsTab .events-list .null{
+  border-color: transparent;
+}
+
+

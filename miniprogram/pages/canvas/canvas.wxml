@@ -1,0 +1,88 @@
+<!--pages/canvas/canvas.wxml-->
+<!-- 头部按钮 -->
+<view class="heaader-tab">
+  <text class="iconfont icon-guanbi" bindtap="goBack"></text>
+  <view class="sub-btn" bindtap="setbg" bindtap="setpic" style="background-color:{{isOver?'#ffcc4d':'#fff'}}">
+    画完了
+  </view>
+</view>
+<view class="null"></view>
+
+<!-- canvas画布 -->
+<view class="canvas">
+  <canvas  style="height:{{height}}px;width:{{width}}px;" type="2d" id="canvas" bindtouchmove="move" bindtouchstart="start"> </canvas>
+</view>
+
+<!-- 底部按钮 -->
+<view class="tools">
+ <view class="tools-tab">
+   <view class="tool-item background {{active==0?'active':''}}" bindtap="select" data-activeNum="0">
+    <text class="iconfont icon-xiaolian"></text>    
+   </view>
+   <view class="tool-item daw {{active==1?'active':''}}" bindtap="select" data-activeNum="1">
+    <text class="iconfont icon-huabigongju-tuya"></text>    
+   </view>
+   <view class="tool-item width  {{active==2?'active':''}}" bindtap="select" data-activeNum="2">
+    <text class="iconfont icon-huihua1"></text>    
+   </view>
+   <view class="tool-item daw  {{active==3?'active':''}}" bindtap="select" data-activeNum="3" wx:if="{{active!=4}}">
+    <text class="iconfont icon-bi" ></text>    
+   </view>
+   <view class="tool-item daw  {{active==4?'active':''}}" bindtap="select" data-activeNum="3" wx:if="{{active==4}}">
+    <text class="iconfont icon-rubber" ></text>    
+   </view>
+   <view class="tool-item daw  {{active==5?'active':''}}" bindtap="select" data-activeNum="5">
+    <text class="iconfont icon-a-icon_chexiaofanhui"></text>    
+   </view>
+ </view>
+ <view class="toos-conter">
+   <!-- 轮廓/背景 -->
+   <view class="background-conter" wx:if="{{active==0}}">
+     <text class="title">轮廓</text>
+     <view class="box" >
+      <view class="item normal {{blankActive==0?'active':''}}" bindtap="blankSelect" data-blank="0">
+        <view  class="white"></view>
+       </view>
+       <view class="item {{blankActive==item.bkIdx?'active':''}}" wx:for="{{biankIconsList}}" wx:key="bkIdx" bindtap="blankSelect" data-blank="{{item.bkIdx}}">
+        <image class="img" src="{{item.icon}}" mode=""/>
+       </view>
+     </view>
+     <view class="title">
+       背景
+     </view>
+     <view class="box">
+       <view class="item" wx:for="{{colorList}}" wx:key="index" bindtap="selectBackground" data-bg="{{index}}" data-bgImg="{{srcMapList[blankActive + item]}}">
+        <image src="{{srcMapList[blankActive + item]}}"  mode="" class="img"/>
+        <view class="doc" wx:if="{{bgActive==index}}"></view>
+       </view>
+     </view>
+   </view>
+   <!-- 粗细调节 -->
+   <view class="line-content"  wx:if="{{active==1}}">
+     <text class="title">画笔粗细</text>
+     <view class="box2">
+      <view class="rang">
+        <van-slider 
+        value="{{pen*10}}" 
+        bind:change="onChange" 
+        active-color="#ffab4d" 
+        inactive-color="#000"
+        />
+      </view>
+      <view class="showDoc">
+        <view class="doc" style="width: {{pen*2}}px; height: {{pen*2}}px"></view>
+      </view>
+     </view>
+   </view>
+   <!-- 画笔颜色 -->
+   <view class="color-conter" wx:if="{{active==2}}">
+      <text class="title">画笔颜色</text>
+      <view class="box3">
+        <view class="color-item {{index==colorActive?'active':''}}" wx:for="{{colorList}}" wx:key="index" style="background: {{'#'+item}};" bindtap="selectColor" data-colorActive="{{index}}"></view>
+      </view>
+   </view>
+ </view>
+</view>
+<van-notify id="van-notify" />
+
+

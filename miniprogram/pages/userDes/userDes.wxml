@@ -1,0 +1,20 @@
+<!--pages/userDes/userDes.wxml-->
+
+<view>
+  <header-back inner-text="Some text">
+    <text>简介</text>
+  </header-back>
+</view>
+<view class="content">
+  <textarea 
+  value="{{des}}" 
+  placeholder="一句话简单奥介绍自己（20个字符内" 
+  maxlength="20" 
+  focus="true"
+  bindinput="writeFn"
+  />
+  <view class="submit" bindtap="submit" style="background-color: {{des==''?'#fff':'#ff9933'}}; color: {{des==''?'#585858':'#fff'}};">
+    提交
+  </view>
+</view>
+<van-toast id="van-toast" />

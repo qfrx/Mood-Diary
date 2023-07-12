@@ -1,0 +1,21 @@
+/* pages/userDes/userDes.wxss */
+
+
+.content textarea{
+  font-size: 16px;
+  width: 90%;
+  margin: 0 auto;
+  color: #000;
+  font-weight: lighter;
+}
+.content .submit{
+  background-color: #fff;
+  width: 90%;
+  font-size: 20px;
+  color: #585856;
+  padding: 15px 0;
+  border-radius: 9999px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+}

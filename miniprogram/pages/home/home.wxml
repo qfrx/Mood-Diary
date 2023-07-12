@@ -1,0 +1,104 @@
+<!--pages/home/home.wxml-->
+
+<view class="header-tab">
+  <view class="left-item">
+    <view> 
+      <view class="iconfont icon-caidan" bindtap="goStatePage"> </view>
+    </view>
+    <view> 
+      <navigator url="/pages/userTheme/userTheme" open-type="navigateTo"   class="iconfont icon-baocun"> </navigator>
+    </view>
+  </view>
+  <view class="center-item">
+    <text class="title">私密日记本</text>
+    <text class="iconfont icon-jiantouxia"></text>
+  </view>
+  <view></view>
+</view>
+
+<view class="calendar" wx:if="{{monthShow}}">
+  <view class="time">
+    <view class="time-year">{{ monthList.year }}</view>
+    <view class="time-month" bindtap="getYearData" data-year="{{monthList.year}}">{{ monthList.month }}
+      <text>月</text>
+      <view class="bg"></view>
+    </view>
+  </view>
+  <view class="calendar-content">
+    <view class="calendar-item" wx:for="{{monthList.data}}" wx:key="day" bindtap="selectOpenWritePage" data-day="{{item.day}}" data-mood="{{item.text.mood.url}}">
+      <image src="{{item.text.mood.url}}" wx:if="{{item.text.mood.url}}"/>
+      <view class="day" wx:if="{{!item.text.mood.url}}">{{ item.day }}</view>
+    </view>
+  </view>
+</view>
+
+<view class="calendar-year" wx:if="{{!monthShow}}">
+  <view class="year-num">
+    <text class="box">
+      2023
+      <text class="bg"></text>
+    </text>
+  </view>
+  <view class="month-content">
+    <view class="month-item" wx:for="{{ yearList }}" wx:key="month" bindtap="goMonthCalendar" data-month="{{ item.month }}" data-year="{{item.year}}">
+      <view class="month-num">{{ item.month + '月' }}</view>
+      <view class="day-box">
+        <view class="numbers" wx:for="{{item.data}}" wx:key="day">
+          <image src="{{item.text.mood.url}}" wx:if="{{item.text.mood.url}}"/>
+          <view class="day" wx:if="{{!item.text.mood.url}}">{{ item.day }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="tabs">
+  <view class="more" bindtap="toUserPage">
+    <text class="iconfont icon-houtaishangpinguanli"></text>
+    <text>更多</text>
+  </view>
+  <view class="write" bindtap="btnClickOpen">
+    <text class="iconfont icon-tianjia"></text>
+  </view>
+  <view class="word" bindtap="toWordPage">
+    <text class="iconfont icon-xingqiu1"></text>
+    <text>小宇宙</text>
+  </view>
+</view>
+
+<view class="moods-box" hidden="{{tabShow}}">
+  <view class="bg"></view>
+   <view class="content" style="transform: translateY({{tabContentTransition}});"  > 
+     <view class="title">
+      主人现在是什么心情呢？
+    </view>
+    <view class="moods">
+      <view class="mood-items animate__animated animate__bounceInUp" wx:for="{{defaultIconList}}" wx:key="id" bindtap="openWritePage" data-mood="{{ {url:item.icon,name:item.name} }}">
+        <image src="{{item.icon}}" mode="aspectFill"></image>
+        <text>{{ item.name }} </text>
+      </view>
+    </view>
+    <view class="btn">
+      <text class="iconfont icon-tianjia close" style="{{'transform: rotateZ(' + btnRouteY + ')' }}" bindtap="btnClickClose"></text>
+      <text class="iconfont icon-huihua1 draw" bindtap="goCanvasPage"></text>
+    </view> 
+  </view> 
+</view>
+
+<van-toast id="van-toast" />
+
+<van-dialog id="van-dialog" />
+
+<view class="floating-window" wx:if="{{vipFlag}}">
+  <view class="box">
+    <image src="https://uniapp.top/tupian/diary/vip_icon_ths.png" mode="" bindtap="openVipPaage"/>
+    <view class="iconfont icon-guanbi" bindtap="closeFloatingWindow"></view>
+  </view>
+</view>
+
+
+
+
+
+
+

@@ -1,0 +1,97 @@
+<!--pages/user/user.wxml-->
+<view>
+  <header-back inner-text="Some text">
+  </header-back>
+</view>
+<view class="userMessage" wx:if="{{user}}">
+  <image src="{{userMessage.avatarUrl}}" mode=""/>
+  <view class="user-text">
+    <view class="name">
+    {{userMessage.nickName}}
+    <view class="vip iconfont icon-VIP" wx:if="{{userMessage.vip}}"></view>
+    </view>
+    <view class="des">
+      <view>{{userMessage.des}}）</view>
+      <text  bindtap="openSetDesPage"></text>
+      <navigator url="/pages/userDes/userDes?des={{userMessage.des}}&_id={{userMessage._id}}&user_id={{userMessage.user_id}}" open-type="navigateTo" class="iconfont icon-xiewrite18"> </navigator>
+    </view>
+  </view>
+</view>
+<view class="login" wx:if="{{!user}}">
+  <view class="userMessage">
+    <view class="tip">
+      登陆后开启更多精彩内容!
+    </view>
+    <button type="primary" bindtap="getUserProfile">一键授权登录</button>
+  </view>
+</view>
+<van-toast id="van-toast" />
+
+
+
+<view class="number-box" wx:if="{{user}}">
+  <view class="number-item">
+    <text class="num">{{10}}</text>
+    <text class="title">
+       作品
+    </text>
+  </view>
+  <view class="number-item">
+    <text class="num">{{10}}</text>
+    <text class="title">
+      获得  <text class="iconfont icon-aixin2" bindtap="likeFn"></text>
+    </text>
+  </view>
+  <view class="number-item">
+    <text class="num">{{5}}</text>
+    <text class="title">
+      我看过谁 
+    </text>
+  </view>
+</view>
+
+<view class="toos-conter" wx:if="{{user}}">
+  <view class="vip-banner">
+    <image class="img" src="../../images/Snipaste_2023-07-07_20-05-00.png" mode=""/>
+    <view class="null-btn" bindtap="openVipPaage"></view>
+  </view>
+  <view class="toos">
+    <view class="toos-item">
+      <view class="title">
+        <text class="iconfont icon-24gl-fileText"></text>
+        <text>隐藏访问记录</text>  
+      </view>    
+      <view class="bnt switch">
+        <van-switch checked="{{ checked }}" bind:change="onChange" />
+      </view>
+    </view>
+    <view class="toos-item">
+      <view class="title">
+        <text class="iconfont icon-baocundaozhuomian"></text>
+        <text>添加小程序到桌面</text>
+      </view>
+      <view class="btn">
+      >
+      </view>
+    </view>
+    <view class="toos-item">
+     <view class="title">
+      <text class="iconfont icon-shoucang"></text>
+      <text>订阅重要消息</text>
+     </view>
+     <van-toast id="van-toast" />
+     <view class="btn add" bindtap="addMyssaage">订阅+</view>         
+    </view>
+    <view class="closeLoad">
+      <button type="primary" bindtap="delLogin" wx:if="{{true}}">退出登录</button>
+    </view>
+
+  </view>
+</view>
+
+
+
+<!-- <button type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>  -->
+
+
+

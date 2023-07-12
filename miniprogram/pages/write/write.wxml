@@ -1,0 +1,139 @@
+<!--pages/write/write.wxml-->
+
+<view class="back">
+    <text class="iconfont icon-fanhui2" bindtap="backHome"></text>
+  </view>
+<view class="write-area">
+<!-- 头部信息 -->
+  <view class="head-container">
+    <view class="time">
+      <view class="top-box">
+        <text class="day">{{time.d<10?'0' + time.d:time.d}}</text>
+        <text class="month">{{time.m}}月</text>
+        <text class="year">{{time.y}}</text>
+      </view>
+      <view class="line"></view>
+      <view class="bottom-box">
+        <text class="week">星期 {{ weekNumber[time.w]}}</text>
+      </view>
+    </view>
+    <view class="pic">
+      <view class="weather" bindtap="openWeatherTab">
+        <image src="{{weather.src}}"/>
+      </view>
+      <view class="events" wx:for="{{events}}" wx:key="index" bindtap="openEventsTab">
+        <image src="{{item.src}}"/>
+      </view>
+      <view class="mood">
+        <image src="{{mood.url}}"/>
+      </view>
+    </view>
+  </view>
+  <!-- 输入内容 -->
+  <view class="word-container">
+    <view class="title">
+      <input type="text" placeholder="标题" model:value="{{title}}" bindinput="titleInput"
+      />
+    </view>
+      <!-- 文章内容区，富文本编辑器 -->
+    <view class="content" style="margin: {{wordContainerMarging}};">
+        <editor id="editor" 
+        class="ql-container" 
+        placeholder="{{placeholder}}" 
+        showImgSize showImgToolbar showImgResize
+        bindready="onEditorReady"
+        bindfocus="editorFocus"
+        bindblur="editorblur"
+      
+        > 
+        </editor>
+    </view>
+    <van-checkbox  value="{{ checked }}" shape="square" bind:change="onChange" wx:if="{{showChecked}}">
+      待办
+    </van-checkbox>
+  </view>
+</view>
+<!-- 提交 -->
+<view class="sub-btn" bindtap="checkLogin">完成</view>
+<view class="null-box"></view>
+<!-- 按钮 -->
+<view class='toolbar' >
+  <view bindtap="insertImage">
+    <i class="iconfont icon-ic_image_upload_mult" bindtap="insertImage"></i>
+    <text>传图</text>
+  </view>
+  <view bindtap="changeAlign">
+    <i class="iconfont icon-zuoduiqi"  wx:if = "{{ textAlign=='left' }}" ></i>
+    <i class="iconfont icon-juzhongduiqi"  wx:if = "{{ textAlign=='center' }}" ></i>
+    <i class="iconfont icon-youduiqi"  wx:if = "{{ textAlign=='right' }}" ></i>
+    <text>对齐</text>
+  </view>
+  <view  bindtap="setTime">
+    <i class="iconfont icon-shijian-xianxing"></i>
+    <text>时间</text>
+  </view>
+  <view bindtap="insertImage" bindtap="clear">
+    <i class="iconfont icon-delete" ></i>
+    <text>清空</text>
+  </view>
+  <view bindtap="addState">
+    <i class="iconfont icon-daiban" style="color: {{showChecked?'red':'#757572'}};;"></i>
+    <text style="color: {{showChecked?'red':'#757572'}};">待办</text>
+  </view>
+</view> 
+<!-- 天气弹窗 -->
+<view class="weatherTab" hidden="{{weatherTabShow}}" style="transform: translateY({{weatherTabTransform}});">
+  <view class="head">
+    <view class="close">
+      <text class="iconfont icon-jiantouxia" bindtap="closeWeatherTab"></text>
+      <p>
+        今天天气怎么样？
+      </p>
+    </view>
+  </view>
+  <view class="weather-list">
+    <view class="weather-item {{ index==weatherActive?'active':'' }}" wx:for="{{weatherList}}" wx:key="index" bindtap="selectWeather"  data-weatherActiveIndex="{{ index }}">
+      <image src="{{item.src}}" mode=""/>
+      <text>{{ item.title }}</text>
+    </view>
+  </view>
+</view>
+<!-- 事件弹窗 -->
+<view class="eventsTab" hidden="{{false}}" style="transform: translateY({{eventsTabTransform}});">
+  <view class="head">
+    <text class="iconfont icon-jiantouxia" bindtap="closeEventsTab"></text>
+    <text class="tip">这天都做过什么事情吖 ~</text>
+    <text class="sure" bindtap="sureEventSelect">确定</text>
+  </view>
+  <view class="events-list">
+    <view class="events-item {{index==eventsActive[0] || index==eventsActive[1]?'active':''}}" wx:for="{{ eventsList }}" wx:key="index" bindtap="selectEvents" data-eventsActiveIndex="{{index}}">
+      <image src="{{item.src}}" mode=""/>
+      <text>{{ item.title }}</text>
+    </view>
+    <view class="events-item null">
+    </view>
+    <view class="events-item null">
+    </view>
+  </view>
+</view>
+<view class="bg" wx:if="{{bgShowFlag}}"></view>
+
+<van-toast id="van-toast" />
+
+<van-dialog id="van-dialog" />
+
+
+
+
+
+
+
+ 
+   
+
+
+
+
+
+
+

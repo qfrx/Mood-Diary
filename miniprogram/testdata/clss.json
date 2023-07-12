@@ -1,0 +1,21 @@
+{
+  "class": [
+    {
+        "name": "私密日记本",
+        "desc": "仅自己可见",
+        "key": "simi",
+        "choosed": 1,
+        "nBkImg": "tupian/icons/dcl_simi.png",
+        "nStyle": "background: linear-gradient(90deg,#b5cd76 0%, #DDEDC3 5%, #B7CE7D 100%);"
+    },
+    {
+        "name": "亲密日记本",
+        "desc": "绑定亲密日记本的人可见",
+        "key": "share",
+        "isvip": 1,
+        "nBkImg": "tupian/icons/dcl_share.png",
+        "nStyle": "background: linear-gradient(90deg,#f5e482 0%, #FFF6C9 5%, #FDE77F 100%);color:#AE8F00;",
+        "choosed": 0
+    }
+]
+}

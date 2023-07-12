@@ -1,0 +1,9 @@
+var getDate = function(str,star,end) {
+  var newStr = '用户_' + str.slice(star,end) + '...'
+  return newStr
+}
+
+module.exports ={
+  getDate:getDate
+}
+

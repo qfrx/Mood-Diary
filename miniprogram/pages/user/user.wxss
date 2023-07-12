@@ -1,0 +1,143 @@
+/* pages/user/user.wxss */
+.header-tab{
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  line-height: 80px;
+  padding-left: 10px;
+}
+.header-tab .iconfont{
+  font-size: 20px;
+}
+
+/* 用户信息 */
+.userMessage{
+  display: flex;
+  align-items: center;
+}
+.userMessage image{
+  margin: 0 20px 0 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.userMessage .user-text{
+  display: flex;
+  flex-direction: column;
+}
+.userMessage .name{
+  font-size: 18px;
+  font-weight: bold;
+  padding: 2px 0;
+  display: flex;
+  align-items: center;
+}
+.vip{
+color: #ffbb00;
+margin-left: 5px;
+}
+.userMessage .des{
+  font-size: 12px;
+  color: #727271;
+  display: flex;
+  padding: 2px 0;
+}
+
+.login .userMessage {
+  display: flex;
+  flex-direction: column;
+}
+.login .tip{
+  margin: 40px 0;
+  font-size: 20px;
+
+}
+.login{
+  position: fixed;
+  bottom: 30vh;
+  left: 0;
+  right: 0;
+}
+
+/* 统计数据 */
+.number-box{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.number-item{
+  border: 1px solid #333333;
+  border-radius: 15px;
+  width: 30%;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: lighter;
+}
+.number-item .num{
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+.number-box .icon-aixin2{
+  color: pink;
+}
+
+/* 其他功能 */
+.toos-conter{
+  margin-top: 20px;
+  padding: 0 12px;
+  position: relative;
+}
+.toos-conter .img{
+  width: 100%;
+  height: 100px;
+}
+.toos-conter .null-btn{
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.toos{
+  position: absolute;
+  top: 90px;
+  left: 0;
+  background-color: #ffffff;
+  height: 300px;
+  width: calc(100% - 24px);
+  margin: 0 12px;
+  border-radius: 10px;
+}
+.toos-item{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12px;
+  height: 60px;
+  align-items: center;
+}
+.toos .title .iconfont{
+  font-size: 24px;
+  padding: 0 5px;
+}
+.toos-item .add{
+  color: red;
+  border: 1px solid red;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeLoad{
+  margin: 20px 10px;
+}

@@ -1,0 +1,156 @@
+/* pages/canvas/canvas.wxss */
+/* 头部 */
+.heaader-tab{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  /* background-color: pink; */
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.heaader-tab .iconfont{
+  padding: 0 20px;
+  font-weight: bolder;
+}
+.heaader-tab .sub-btn{
+  background-color: #fff;
+  padding: 5px 15px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.null{
+  height: 70px;
+}
+
+/* 工具按钮选项 */
+.tools-tab{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+}
+.tool-item .iconfont{
+  font-size: 26px;
+}
+
+.tool-item{
+  padding: 5px;
+  border-radius: 50%;
+}
+.tool-item.active{
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* 轮廓 */
+.toos-conter{
+  padding: 12px 0;
+  width: 100%;
+  position: fixed;
+  bottom: 82px;
+}
+.toos-conter  .box{
+  display: flex;
+  overflow: auto;
+  margin-top: 10px;
+  padding:  0 12px;
+}
+.toos-conter .title{
+  font-size: 18px;
+  padding: 0 12px;
+}
+ .box .item{
+  width: 50px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 19px;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+.box .item.active{
+  transform: scale(1.2);
+}
+
+.background-conter .box .normal .white{
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.box .img{
+  width: 50px;
+  height: 50px;
+}
+.box .item{
+  position: relative;
+}
+.box .item .doc{
+  position: absolute;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 22px;
+  left: 12px;
+  border: 3px solid #fff;
+  
+}
+
+.box2{
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.box2 .rang{
+  width: 80%;
+}
+.box2 .showDoc{
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  
+}
+.box2 .showDoc .doc{
+  background-color: #000;
+  border-radius: 50%;
+  width: 6px ;
+  height: 6px;
+}
+
+/* 画笔颜色 */
+.box3{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  margin-top: 10px;
+}
+.box3 .color-item{
+  width: 6vw;
+  height: 6vw;
+  margin: 1vw;
+  box-sizing: border-box;
+}
+.box3 .color-item.active{
+ border: 3px solid red; 
+}
+
+/* 画布 */
+.canvas{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

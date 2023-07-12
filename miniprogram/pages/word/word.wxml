@@ -1,0 +1,29 @@
+<!--pages/word/word.wxml-->
+<wxs src="../../setData/DateFr.wxs" module="wxs" />
+<view>
+  <header-back inner-text="Some text" class="head-tab">
+    <text>小宇宙</text>
+  </header-back>
+</view>
+<view class="card-list">
+  <view class="card-item" wx:for="{{wordList}}" wx:key="_id">
+    <view class="mood">
+      <image src="{{item.icon}}" mode=""/>
+      <text>{{item.name}}</text>
+    </view>
+    <view class="author">
+     <view class="des">
+      <image src="{{item.fromInfo.avatar}}" alt=""/>
+      <text class="name">{{item.fromInfo.nickname?item.fromInfo.nickname:wxs.getDate(item.uid,14,21)}}</text>
+     </view>
+      <view class="like">
+        <text class="iconfont icon-aixin" bindtap="likeFn" data-likeIndex="{{index}}" style="color: {{item.like==true?'red':''}}" ></text>
+        <view class="num">{{item.extra.all>99?'99+':item.extra.all}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<van-toast id="van-toast" />
+
+
+

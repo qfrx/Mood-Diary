@@ -1,0 +1,1 @@
+"D:\wechatTol\微信web开发者工具\cli.bat" cloud functions deploy --e environment-1-7g9whyrmcd432435 --n quickstartFunctions --r --project "C:\Users\SHIHAO\Desktop\粤嵌3\小程序" --report_first --report

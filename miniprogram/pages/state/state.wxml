@@ -1,0 +1,69 @@
+<!--pages/state/state.wxml-->
+<view>
+  <header-back inner-text="Some text">
+    <text>待办</text>
+  </header-back>
+</view>
+<view class="tab-title">
+  <view class="incomplete {{tabSelect=='inc'?'active':''}}" bindtap="tabSelect" data-select="{{ 'inc' }}">
+    <text>待完成</text>
+  </view>  
+  <view class="complete {{tabSelect=='com'?'active':''}}" bindtap="tabSelect" data-select="{{ 'com' }}">
+    <text>已完成</text>
+  </view>
+</view>
+<view class="tab-content">
+  <view class="inc" wx:if="{{tabSelect=='inc'}}">
+    <view class="listItem" wx:for="{{incompleteList}}" wx:key="_id" bindtap="openWritePage" data-time="{{item.time}}" data-mood="{{item.mood}}">
+      <view class="time">
+        <view class="top-box">
+          <text class="day">{{item.time.d<10?'0' + item.time.d:item.time.d}}</text>
+          <text class="month">{{item.time.m}}月</text>
+          <text class="year">{{item.time.y}}</text>
+        </view>
+        <view class="line"></view>
+        <view class="bottom-box">
+          <text class="week">星期 {{ weekNumber[item.time.w]}}</text>
+        </view>
+      </view>
+      <view class="pic">
+        <view class="weather">
+          <image src="{{item.weather.src}}"/>
+        </view>
+        <view class="events" wx:for="{{item.events}}" wx:key="index" bindtap="openEventsTab">
+          <image src="{{item.src}}"/>
+        </view>
+        <view class="mood">
+          <image src="{{item.mood.url}}"/>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="com" wx:if="{{tabSelect=='com'}}">
+    <view class="listItem" wx:for="{{completeList}}" wx:key="_id" bindtap="openWritePage" data-time="{{item.time}}" data-mood="{{item.mood}}">
+      <view class="time">
+        <view class="top-box">
+          <text class="day">{{item.time.d<10?'0' + item.time.d:item.time.d}}</text>
+          <text class="month">{{item.time.m}}月</text>
+          <text class="year">{{item.time.y}}</text>
+        </view>
+        <view class="line"></view>
+        <view class="bottom-box">
+          <text class="week">星期 {{ weekNumber[item.time.w]}}</text>
+        </view>
+      </view>
+      <view class="pic">
+        <view class="weather">
+          <image src="{{item.weather.src}}"/>
+        </view>
+        <view class="events" wx:for="{{item.events}}" wx:key="index" bindtap="openEventsTab">
+          <image src="{{item.src}}"/>
+        </view>
+        <view class="mood">
+          <image src="{{item.mood.url}}"/>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

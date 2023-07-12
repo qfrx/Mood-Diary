@@ -1,0 +1,155 @@
+/* pages/vip/vip.wxss */
+.header-tab{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  background-color: #fce6c5;
+  z-index: 99;
+}
+.header-tab .box{
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-tab .box .icon-fanhui2{
+  position: absolute;
+  left: 12px;
+}
+.null{
+  height: 50px;
+}
+.bg{
+  height: 270px;
+  width: 100%;
+  background-color: #fce6c5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.bg-light{
+  background-color: #fff;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+/* 轮播 */
+.swiper-container{
+  margin-top: 25px;
+}
+.swiper-container .swiper-item image{
+  height: 100%;
+  width: 100%;
+  padding: 0 10px;
+  transition: all,.5s;
+  transform: scale(1.1);
+}
+
+/* 价格 */
+.price-content{
+  display: flex;
+  margin: 30px 12px;
+  overflow: auto;
+}
+.price-item.active{
+  border: 1px solid #f5132e;
+  background-color: #ffedef;
+}
+.price-item{
+  padding: 10px;
+  border: 1px solid #f5c299;
+  margin-right: 15px;
+  flex-shrink: 0; 
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+.price-item {
+  position: relative;
+}
+.price-item .icon-redu{
+  color: red;
+}
+.price-item .name{
+  font-size: 14px;
+  display: flex;
+  align-content: center;
+}
+.price-item .now-price{
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 0;
+  color: #000;
+}
+.price-item .old-price{
+  font-size: 12px;
+  opacity: .8;
+  text-decoration: line-through;
+}
+/* 协议 */
+.word .name{
+  color: rgb(29, 29, 29);
+  font-size: 14px;
+  padding-bottom: 12px;
+}
+.word{
+  padding: 0 12px;
+  font-size: 12px;
+  color: #aaa;
+  letter-spacing: .2em;
+  line-height: 1.5em;
+  user-select: none;
+}
+
+/* 付款按钮 */
+.buy{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buy .btn{
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  background: -webkit-linear-gradient(left,rgb(235, 105, 19),rgb(243, 42, 109));
+  padding: 15px 0;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 999px;
+  margin-top: 30px;
+  animation: payBtn 2s linear 0s infinite alternate;
+}
+
+@keyframes payBtn{
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

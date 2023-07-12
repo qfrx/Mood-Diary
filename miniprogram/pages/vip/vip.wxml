@@ -1,0 +1,94 @@
+<!--pages/vip/vip.wxml-->
+<view class="header-tab">
+  <view class="box">
+    <view class="iconfont icon-fanhui2" bindtap="goBack"></view>
+    <text>会员中心</text>
+  </view>
+</view>
+<view class="null"></view>
+<view class="bg"></view>
+<!-- 滚动通知栏 -->
+<van-notice-bar 
+scrollable text="’用户161****261刚刚开通了会员’          ‘用户134****668刚刚开通了会员‘          ‘用户168****118刚刚开通了会员‘          ‘用户158****758刚刚开通了会员‘          ‘用户185****923刚刚开通了会员‘          ‘用户166****431刚刚开通了会员‘"
+speed="40"
+background="transparent"
+ />
+ <!-- 轮播图 -->
+<view class="swiper-container">
+  <swiper 
+  autoplay interval="{{5000}}"
+  indicator-color="rgb(175, 175, 175)"
+  circular
+  previous-margin="10px"
+  next-margin="10px"
+  style="height: 200px;"
+  bindchange="changeShow"
+  >
+    <block wx:for="{{tabList}}" wx:key="index">
+      <swiper-item class="swiper-item">
+        <image src="{{item.src}}" mode="aspectFill" style="transform: scale({{index == active?1.1:.9}});"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- vip种类 -->
+<view class="price-content">
+  <view class="price-item {{vipType==0?'active':''}}" bindtap="selectVipType" data-vip="0">
+    <text class="name">
+      <text class="iconfont icon-redu"></text>
+      <text>永久会员</text>
+      </text>
+    <view class="now-price">
+      ¥15.00
+    </view>
+    <view class="old-price">
+      ¥300.00
+    </view>
+  </view>
+  <view class="price-item {{vipType==1?'active':''}}" bindtap="selectVipType" data-vip="1">
+    <text class="name">年度会员</text>
+    <view class="now-price">
+      ¥8.00
+    </view>
+    <view class="old-price">
+      ¥80.00
+    </view>
+  </view>
+  <view class="price-item {{vipType==2?'active':''}}" bindtap="selectVipType" data-vip="2">
+    <text class="name">季度会员</text>
+    <view class="now-price">
+      ¥9.00
+    </view>
+    <view class="old-price">
+      ¥900.00
+    </view>
+  </view>
+  <view class="price-item {{vipType==3?'active':''}}" bindtap="selectVipType" data-vip="3">
+    <text class="name">月度会员</text>
+    <view class="now-price">
+      ¥3.00
+    </view>
+    <view class="old-price">
+      ¥6.00
+    </view>
+  </view>
+</view>
+<view class="bg-light"></view>
+ <!-- 协议 -->
+ <view class="word">
+    <text class="name"> 订阅说明</text>
+    <text>
+    良心经营，你购买的是虚拟商品，不会自动续费哦，支持开通多个会员类型会员时长会相应叠加，会员时间标准为每月30天;活动结束时间不定时有权随时停止优惠活动，并恢复原价，请尽早购买，以免错过此次优惠商品购买后立即生效，不予退款，望你谅解;法律范围内活动解释权归官有。
+    优惠倒计时: 06:36:28 (价格上涨随市场变动)
+    </text>
+ </view>
+<!-- 购买按钮 -->
+<view class="buy">
+  <view class="btn" bindtap="payFun">
+    <text wx:if="{{vipType==0}}">一次付款，终身享受，立即付款</text>
+    <text wx:if="{{vipType!=0}}">立即付款</text>
+  </view>
+</view>
+
+<van-toast id="van-toast" />
+
